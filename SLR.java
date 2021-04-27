@@ -12,8 +12,8 @@ public class SLR{
 
     public double betaUno(){    // se calcula beta uno
             double result=0;
-            int numerator=0;
-            int denominator=0;
+            double numerator=0;
+            double denominator=0;
             numerator=ds_X.size()*sumXiYi()-sumXi()*sumYi();
             denominator=ds_X.size()*sumPowerXi()-sumXi()*sumXi();
             result=numerator/denominator;
@@ -22,8 +22,8 @@ public class SLR{
     }
     public double betaZero(){    // se calcula beta cero
             double result=0;
-            int numerator=0;
-            int denominator=0;
+            double numerator=0;
+            double denominator=0;
             numerator=sumPowerXi()*sumYi()-sumXi()*sumXiYi();
             denominator=ds_X.size()*sumPowerXi()-sumXi()*sumXi();
             result=numerator/denominator;
@@ -60,7 +60,6 @@ public class SLR{
     }
     public void addData(){ // metodo para añadir los datos al arreglo de X y Y
 
-
         ds_Y.add(651);
         ds_Y.add(762);
         ds_Y.add(856);
@@ -87,12 +86,15 @@ public static void main(String[] varx){
         double dt1=0;
         double pre=0;
         SLR obj1=new SLR();
+
         System.out.println("  X        Y        XY        X^2");
         System.out.println("  "+obj1.sumXi()+"      "+obj1.sumYi()+"    "+obj1.sumXiYi()+"    "+obj1.sumPowerXi()+"\n");
+
+
         dt0=obj1.betaZero();
         dt1=obj1.betaUno();
-        System.out.println("  Y = B0 + B1x  \n  Y = "+dt0+" + "+dt1+"("+varx[0]+")\n");
-        pre=dt0+(dt1*Integer.valueOf(varx[0]));
+        System.out.println("  Y = B0 + B1x  \n  Y = "+(double)dt0+" + "+(double)dt1+"("+varx[0]+")\n");
+        pre=dt0+(dt1*Double.valueOf(varx[0]));
         System.out.println("  y "+pre+"\n");
 }
 
