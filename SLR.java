@@ -87,20 +87,13 @@ public static void main(String[] varx){
         double dt1=0;
         double pre=0;
         SLR obj1=new SLR();
-//        System.out.println("Sum x "+obj1.sumXi());
-//        System.out.println("Sum y "+obj1.sumYi());
-//        System.out.println("Sum xy "+obj1.sumXiYi());
-//        System.out.println("Sum x2 "+obj1.sumPowerXi());
-
-        System.out.println("  X        Y        XY        X2");
+        System.out.println("  X        Y        XY        X^2");
         System.out.println("  "+obj1.sumXi()+"      "+obj1.sumYi()+"    "+obj1.sumXiYi()+"    "+obj1.sumPowerXi()+"\n");
-
-
         dt0=obj1.betaZero();
         dt1=obj1.betaUno();
-        System.out.println("  Y = B0 + B1x  \n  Y = "+dt0+" + "+dt1+"("+varx[0]+")");
+        System.out.println("  Y = B0 + B1x  \n  Y = "+dt0+" + "+dt1+"("+varx[0]+")\n");
         pre=dt0+(dt1*Integer.valueOf(varx[0]));
-        System.out.println("y "+pre);
+        System.out.println("  y "+pre+"\n");
 }
 
 }
